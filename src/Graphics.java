@@ -54,7 +54,7 @@ public class Graphics extends Canvas implements Runnable {
         this.addMouseListener(new MyMouseListener());
         this.requestFocus();
 
-        b = new Ball(200,100);
+        b = new Ball(190,140);
         paddle = new Paddle(0,0,0xFFFF0000);
         paddle2 = new Paddle2(0,0,0xFFFF0000);
     }
@@ -139,6 +139,7 @@ public class Graphics extends Canvas implements Runnable {
         public void keyPressed(KeyEvent keyEvent) {
             paddle.keyPressed(keyEvent);
             paddle2.keyPressed(keyEvent);
+            b.keyPressed(keyEvent);
         }
 
         @Override
