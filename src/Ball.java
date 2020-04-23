@@ -9,6 +9,7 @@ public class Ball {
     private Rectangle boundingBox;
     private int height = 10;
     private int width = 10;
+    private int startDirection = 1;
 
     public Ball(int x, int y){
         pixels = new int[width*height];
@@ -87,12 +88,14 @@ public class Ball {
             setXDirection(0);
             boundingBox.x = 190;
             boundingBox.y = 140;
+            startDirection = 1;
 
         }
         if (boundingBox.x >= 385) {
             setXDirection(0);
             boundingBox.x = 190;
             boundingBox.y = 140;
+            startDirection = -1;
         }
         if (boundingBox.y <= 0) setYDirection(+1);
         if (boundingBox.y >= 285) setYDirection(-1);
@@ -106,7 +109,11 @@ public class Ball {
     }
     public void keyPressed(KeyEvent e){
         if(e.getKeyCode() == e.VK_SPACE){
-            setXDirection(-1);
+            if(startDirection == 1) {
+                xDirection = 1;
+            } else {
+                xDirection = -1;
+            }
         }
     }
 }
