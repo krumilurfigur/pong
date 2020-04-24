@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.awt.*;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
@@ -9,7 +10,9 @@ public class Ball {
     private Rectangle boundingBox;
     private int height = 10;
     private int width = 10;
-    private int startDirection = 1;
+    private int startDirection;
+    private int Lscore = 0;
+    private int Rscore = 0;
 
     public Ball(int x, int y){
         pixels = new int[width*height];
@@ -83,19 +86,22 @@ public class Ball {
         boundingBox.x += xDirection;
         boundingBox.y += yDirection;
         System.out.println();
-        //Bounce the ball when edge is detected
+        //increase score when the left or right side is reached
         if (boundingBox.x <= 0) {
             setXDirection(0);
             boundingBox.x = 190;
             boundingBox.y = 140;
             startDirection = 1;
-
+            Rscore += 1;
+            JOptionPane.showMessageDialog(null,Lscore + "-" + Rscore);
         }
         if (boundingBox.x >= 385) {
             setXDirection(0);
             boundingBox.x = 190;
             boundingBox.y = 140;
             startDirection = -1;
+            Lscore += 1;
+            JOptionPane.showMessageDialog(null,Lscore + "-" + Rscore);
         }
         if (boundingBox.y <= 0) setYDirection(+1);
         if (boundingBox.y >= 285) setYDirection(-1);
@@ -107,6 +113,7 @@ public class Ball {
         collision(r);
 
     }
+    //after a goal, pressing space starts the game again with the ball moving in the opposite direction
     public void keyPressed(KeyEvent e){
         if(e.getKeyCode() == e.VK_SPACE){
             if(startDirection == 1) {
