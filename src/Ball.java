@@ -118,8 +118,10 @@ public class Ball {
         if(e.getKeyCode() == e.VK_SPACE){
             if(startDirection == 1) {
                 xDirection = 1;
-            } else {
+                startDirection = 0;
+            } else if(startDirection == -1){
                 xDirection = -1;
+                startDirection = 0;
             }
         }
     }
