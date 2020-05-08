@@ -13,6 +13,7 @@ public class Ball {
     private int startDirection;
     private int Lscore = 0;
     private int Rscore = 0;
+    private String s = "goal";
 
     public Ball(int x, int y){
         pixels = new int[width*height];
@@ -103,6 +104,7 @@ public class Ball {
             startDirection = -1;
             Lscore += 1;
             JOptionPane.showMessageDialog(null,Lscore + "-" + Rscore);
+
         }
         if (boundingBox.y <= 0) setYDirection(+1);
         if (boundingBox.y >= 285) setYDirection(-1);
