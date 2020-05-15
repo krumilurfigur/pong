@@ -13,6 +13,7 @@ public class Ball {
     private int startDirection;
     private int Lscore = 0;
     private int Rscore = 0;
+    public static int dif;
     private String s = "goal";
 
     public Ball(int x, int y){
@@ -95,6 +96,8 @@ public class Ball {
             boundingBox.y = 140;
             startDirection = 1;
             Rscore += 1;
+            dif = Lscore - Rscore;
+            dif *= 5;
             JOptionPane.showMessageDialog(null,Lscore + "-" + Rscore);
         }
         if (boundingBox.x >= 385) {
@@ -103,6 +106,8 @@ public class Ball {
             boundingBox.y = 140;
             startDirection = -1;
             Lscore += 1;
+            dif = Lscore - Rscore;
+            dif *= 5;
             JOptionPane.showMessageDialog(null,Lscore + "-" + Rscore);
 
         }

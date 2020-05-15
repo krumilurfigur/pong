@@ -11,12 +11,16 @@ public class Paddle {
     private int height = 20;
 
     public Paddle(int x, int y, int col){
+        if (Ball.dif < 0) {
+            height = 20 - Ball.dif;
+        }
         boundingBox = new Rectangle(x, y, width, height);
         pixels = new int[width*height];
         for (int i = 0 ; i < pixels.length ; i++) {
             pixels[i] = col;
             boundingBox.x = 10;
             boundingBox.y = 120;
+
         }
     }
 
@@ -63,9 +67,10 @@ public class Paddle {
         if(boundingBox.y <= 0) {
             boundingBox.y = 0;
         }
-        if(boundingBox.y >= 260) {
-            boundingBox.y = 260;
+        if(boundingBox.y >= 280) {
+            boundingBox.y = 280;
         }
+
     }
 
     public void draw(int[] Screen, int screenWidth){

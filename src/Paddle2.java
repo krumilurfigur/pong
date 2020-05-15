@@ -11,6 +11,9 @@ public class Paddle2 {
     private int height = 20;
 
     public Paddle2(int x, int y, int col){
+        if (Ball.dif > 0) {
+            height = 20 + Ball.dif;
+        }
         boundingBox = new Rectangle(x, y, width, height);
         pixels = new int[width*height];
         for (int i = 0 ; i < pixels.length ; i++) {
@@ -63,8 +66,8 @@ public class Paddle2 {
         if(boundingBox.y <= 0) {
             boundingBox.y = 0;
         }
-        if(boundingBox.y >= 260) {
-            boundingBox.y = 260;
+        if(boundingBox.y >= 280) {
+            boundingBox.y = 280;
         }
     }
 
