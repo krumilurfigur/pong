@@ -2,7 +2,7 @@
  * This is a class
  * Created 2020-03-25
  *
- * @author Magnus Silverdal
+ * @author Magnus Silverdal, Gabriel Öberg
  */
 public class Main {
     public static void main(String[] args) {
