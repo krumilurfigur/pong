@@ -9,3 +9,8 @@ bollen resettas till mitten om den rör höger eller vänster vägg
 pynt: 
 scoreboard,
 det ser fint ut
+
+loggbok:https://github.com/krumilurfigur/pong/wiki/Loggbok
+
+post mortem:
+https://github.com/krumilurfigur/pong/wiki/Post-Mortem
